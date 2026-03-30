@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tienda de Ropa</title>
+<style>
+body{
+  font-family:Arial;
+  background:linear-gradient(135deg,#00c9ff,#92fe9d);
+  margin:0;
+  text-align:center;
+}
+
+h1{
+  padding:20px;
+  color:white;
+}
+
+input{
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  width:200px;
+}
+
+button{
+  background:#00b894;
+  color:white;
+  border:none;
+  padding:8px;
+  border-radius:8px;
+  cursor:pointer;
+  margin:5px;
+}
+
+button:hover{
+  background:#019875;
+}
+
+.contenedor{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  width:220px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+img{
+  width:100%;
+  border-radius:10px;
+}
+</style>
+
+<script>
+let carrito = 0;
+
+function agregar(){
+  carrito++;
+  document.getElementById("contador").innerText = carrito;
+}
+
+function buscar(){
+  let texto = document.getElementById("busqueda").value.toLowerCase();
+  if(texto.includes("playera") || texto.includes("sudadera")){
+    alert("Producto encontrado 😄");
+  }else{
+    alert("Producto no encontrado 😢");
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Tienda de Ropa 🛍️</h1>
+
+<input type="text" id="busqueda" placeholder="Buscar producto">
+<button onclick="buscar()">Buscar</button>
+
+<p>Panel de administración (simulado)</p>
+
+<h2>Carrito: <span id="contador">0</span> productos</h2>
+
+<div class="contenedor">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
+<h3>Playera Negra</h3>
+<p>$150</p>
+<button onclick="agregar()">Agregar</button>
+<button>Comprar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>Sudadera</h3>
+<p>$350</p>
+<button onclick="agregar()">Agregar</button>
+<button>Comprar</button>
+</div>
+
+</div>
+
+</body>
+</html>
