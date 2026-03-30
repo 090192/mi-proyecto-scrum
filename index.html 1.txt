@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tienda de Ropa</title>
+<style>
+body{
+  font-family:Arial;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  margin:0;
+  text-align:center;
+}
+
+h1{
+  color:white;
+  padding:20px;
+}
+
+.contenedor{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  width:220px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+img{
+  width:100%;
+  border-radius:10px;
+}
+
+button{
+  background:#ff6b6b;
+  color:white;
+  border:none;
+  padding:8px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#ff4757;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Tienda de Ropa 🛍️</h1>
+
+<div class="contenedor">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
+<h3>Playera Negra</h3>
+<p>$150</p>
+<button>Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>Sudadera</h3>
+<p>$350</p>
+<button>Agregar</button>
+</div>
+
+</div>
+
+</body>
+</html>
