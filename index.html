@@ -17,61 +17,71 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins', sans-serif;
-    background:#f4f6f9;
-    color:#333;
+    background:#f5f3f0;
+    color:#3b3b3b;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* HEADER */
 
-nav{
-    background:#111827;
-    padding:18px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.top-header{
+    background:#d6cec3;
+    color:#3b3b3b;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.top-header h1{
+    font-size:38px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* MENU */
+
+.menu{
+    background:#ece7e1;
+    padding:20px;
+    text-align:center;
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.logo{
-    color:white;
-    font-size:28px;
-    font-weight:700;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-nav ul li a{
+.menu a{
+    display:inline-block;
+    background:#c8beb1;
+    color:#3b3b3b;
     text-decoration:none;
-    color:white;
-    font-weight:500;
+    margin:10px;
+    padding:14px 28px;
+    border-radius:15px;
+    font-size:17px;
+    font-weight:600;
     transition:0.3s;
 }
 
-nav ul li a:hover{
-    color:#60a5fa;
+.menu a:hover{
+    background:#b6aa9b;
+    transform:translateY(-3px);
 }
 
 /* HERO */
 
 .hero{
-    height:90vh;
+    height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1445205170230-053b83016050');
-    
+    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
-
     display:flex;
     justify-content:center;
     align-items:center;
@@ -80,189 +90,188 @@ nav ul li a:hover{
     padding:20px;
 }
 
-.hero-content h1{
-    font-size:60px;
+.hero-content{
+    max-width:900px;
+    animation:fadeIn 2s ease;
+}
+
+.hero-content h2{
+    font-size:78px;
     margin-bottom:20px;
+    font-weight:700;
 }
 
 .hero-content p{
-    font-size:22px;
-    margin-bottom:30px;
+    font-size:24px;
+    line-height:1.7;
+    margin-bottom:35px;
 }
 
-.hero-content button{
-    background:#2563eb;
+.btn{
+    display:inline-block;
+    background:#b6aa9b;
     color:white;
-    border:none;
-    padding:15px 30px;
+    padding:18px 45px;
+    border-radius:50px;
+    text-decoration:none;
     font-size:18px;
-    border-radius:10px;
-    cursor:pointer;
+    font-weight:600;
     transition:0.3s;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
 
-.hero-content button:hover{
-    background:#1d4ed8;
+.btn:hover{
+    background:#9f9384;
     transform:scale(1.05);
 }
 
 /* BUSCADOR */
 
-.buscador{
-    margin:40px auto;
+.search{
+    background:#ece7e1;
+    padding:50px 20px;
     text-align:center;
 }
 
-.buscador input{
-    width:350px;
-    padding:14px;
+.search input{
+    width:420px;
+    max-width:90%;
+    padding:18px;
     border:none;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    border-radius:50px;
     font-size:16px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    outline:none;
 }
 
-/* TITULOS */
+/* SECCIONES */
 
-.titulo{
+.section{
+    padding:90px 10%;
+}
+
+.section-title{
     text-align:center;
-    font-size:35px;
-    margin:30px 0;
-    color:#111827;
+    margin-bottom:50px;
 }
 
-/* PRODUCTOS */
+.section-title h2{
+    font-size:42px;
+    color:#4b4b4b;
+    margin-bottom:12px;
+}
 
-.contenedor{
-    display:flex;
-    justify-content:center;
+.section-title p{
+    color:#777;
+    font-size:18px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
-    flex-wrap:wrap;
-    padding:20px 50px;
 }
 
 .card{
     background:white;
-    width:300px;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    padding:35px;
+    border-radius:22px;
     transition:0.4s;
+    box-shadow:0 8px 18px rgba(0,0,0,0.07);
+    border:1px solid #e5ddd4;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
-.card img{
+.card h3{
+    color:#8c7b6a;
+    margin-bottom:18px;
+    font-size:24px;
+}
+
+.card p{
+    line-height:1.8;
+    color:#666;
+}
+
+/* GALERIA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
     width:100%;
     height:350px;
     object-fit:cover;
-}
-
-.info{
-    padding:20px;
-}
-
-.info h3{
-    margin-bottom:10px;
-    font-size:24px;
-}
-
-.descripcion{
-    color:#666;
-    margin-bottom:15px;
-}
-
-.precio{
-    color:#2563eb;
-    font-size:24px;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-button{
-    background:#111827;
-    color:white;
-    border:none;
-    padding:12px 18px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-    width:100%;
-    font-size:16px;
-}
-
-button:hover{
-    background:#2563eb;
-}
-
-/* CARRITO */
-
-#carrito{
-    background:white;
-    width:90%;
-    max-width:850px;
-    margin:50px auto;
-    padding:30px;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
 }
 
-#carrito h2{
-    margin-bottom:20px;
-    color:#111827;
-}
-
-#lista{
-    list-style:none;
-    margin:20px 0;
-}
-
-#lista li{
-    padding:12px;
-    border-bottom:1px solid #ddd;
-}
-
-#contador,
-#total{
-    font-size:18px;
-    margin-top:10px;
-}
-
-/* ADMIN */
-
-#admin{
-    background:white;
-    width:90%;
-    max-width:850px;
-    margin:30px auto;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* MENSAJE */
-
-#mensaje{
-    text-align:center;
-    color:red;
-    font-weight:bold;
-    margin-top:15px;
+.gallery img:hover{
+    transform:scale(1.03);
 }
 
 /* FOOTER */
 
 footer{
-    background:#111827;
-    color:white;
+    background:#d6cec3;
+    color:#3b3b3b;
     text-align:center;
-    padding:25px;
-    margin-top:50px;
+    padding:40px 20px;
+    margin-top:40px;
 }
 
 footer p{
-    margin:8px;
+    margin:10px 0;
+}
+
+/* ANIMACION */
+
+@keyframes fadeIn{
+
+from{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-content h2{
+    font-size:48px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
+.menu a{
+    display:block;
+    margin:12px auto;
+    width:80%;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
 }
 
 </style>
@@ -271,294 +280,230 @@ footer p{
 
 <body>
 
-<!-- NAVBAR -->
+<header class="top-header">
+    <h1>Producto Integrador Final</h1>
+</header>
 
-<nav>
-
-<div class="logo">
-Luxury Fashion
-</div>
-
-<ul>
-<li><a href="#">Inicio</a></li>
-<li><a href="#">Productos</a></li>
-<li><a href="#">Ofertas</a></li>
-<li><a href="#">Contacto</a></li>
-</ul>
-
+<nav class="menu">
+    <a href="#actividades">Actividades</a>
+    <a href="#sistema">Sistema</a>
+    <a href="#codigo">Código Fuente</a>
+    <a href="#reporte">Reporte</a>
+    <a href="#galeria">Galería</a>
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>Moda Exclusiva 2026</h1>
+<h2>Luxury Fashion</h2>
 
 <p>
-Descubre ropa moderna y elegante con las mejores tendencias del año
+Proyecto web desarrollado utilizando metodología SCRUM, integrando diseño moderno, usabilidad, accesibilidad y desarrollo responsivo.
 </p>
 
-<button>
-Comprar ahora
-</button>
+<a href="#" class="btn">Explorar colección</a>
 
 </div>
 
 </section>
 
-<!-- BUSCADOR -->
+<section class="search">
 
-<div class="buscador">
+<input type="text" placeholder="Buscar productos...">
 
-<input
-type="text"
-id="buscador"
-placeholder="Buscar producto..."
-onkeyup="buscar()">
+</section>
 
+<section class="section" id="actividades">
+
+<div class="section-title">
+<h2>Actividades Realizadas</h2>
+<p>Actividades desarrolladas durante el curso</p>
 </div>
 
-<p id="mensaje"></p>
-
-<!-- TITULO -->
-
-<h2 class="titulo">
-Nuestros productos
-</h2>
-
-<!-- PRODUCTOS -->
-
-<div class="contenedor">
-
-<!-- CARD 1 -->
+<div class="cards">
 
 <div class="card">
-
-<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1">
-
-<div class="info">
-
-<h3>Playera Negra</h3>
-
-<p class="descripcion">
-Playera casual de algodón premium.
-</p>
-
-<p class="precio">$150</p>
-
-<button class="btn">
-Agregar al carrito
-</button>
-
-</div>
-
-</div>
-
-<!-- CARD 2 -->
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475">
-
-<div class="info">
-
-<h3>Sudadera</h3>
-
-<p class="descripcion">
-Sudadera moderna y cómoda.
-</p>
-
-<p class="precio">$350</p>
-
-<button class="btn">
-Agregar al carrito
-</button>
-
-</div>
-
-</div>
-
-<!-- CARD 3 -->
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
-
-<div class="info">
-
-<h3>Jeans</h3>
-
-<p class="descripcion">
-Jeans ajustados de mezclilla premium.
-</p>
-
-<p class="precio">$500</p>
-
-<button class="btn">
-Agregar al carrito
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CARRITO -->
-
-<div id="carrito">
-
-<h2>Carrito de compras 🛒</h2>
-
-<p id="contador">
-Productos agregados: 0
-</p>
-
-<ul id="lista"></ul>
-
-<p id="total">
-Total: $0
-</p>
-
-<button onclick="comprar()">
-Finalizar compra
-</button>
-
-</div>
-
-<!-- ADMIN -->
-
-<div id="admin">
-
-<h2>Panel de administración</h2>
-
+<h3>Diseño Responsivo</h3>
 <p>
-Total de productos agregados:
-<span id="totalAdmin">0</span>
+Se desarrolló una interfaz adaptable para dispositivos móviles y computadoras.
 </p>
+</div>
+
+<div class="card">
+<h3>Usabilidad Web</h3>
+<p>
+Se mejoró la navegación y experiencia visual del usuario.
+</p>
+</div>
+
+<div class="card">
+<h3>Accesibilidad</h3>
+<p>
+Se implementaron mejoras para facilitar el acceso al contenido.
+</p>
+</div>
+
+<div class="card">
+<h3>SCRUM</h3>
+<p>
+Se utilizó la metodología SCRUM para organizar el desarrollo del proyecto.
+</p>
+</div>
 
 </div>
 
-<!-- FOOTER -->
+</section>
+
+<section class="section" id="sistema">
+
+<div class="section-title">
+<h2>Sistema Implementado</h2>
+<p>Descripción del proyecto desarrollado</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>HTML5</h3>
+<p>
+Se utilizó HTML5 para estructurar el contenido de la página web.
+</p>
+</div>
+
+<div class="card">
+<h3>CSS3</h3>
+<p>
+Se aplicaron estilos modernos y diseño visual profesional.
+</p>
+</div>
+
+<div class="card">
+<h3>Diseño Elegante</h3>
+<p>
+El sistema presenta una apariencia moderna y minimalista.
+</p>
+</div>
+
+<div class="card">
+<h3>Github</h3>
+<p>
+El proyecto fue publicado y administrado mediante Github.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="codigo">
+
+<div class="section-title">
+<h2>Código Fuente</h2>
+<p>Archivos y recursos utilizados</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Archivos HTML</h3>
+<p>
+Contienen la estructura principal del sistema.
+</p>
+</div>
+
+<div class="card">
+<h3>Estilos CSS</h3>
+<p>
+Definen colores, diseño y organización visual del proyecto.
+</p>
+</div>
+
+<div class="card">
+<h3>Imágenes</h3>
+<p>
+Se integraron imágenes modernas para mejorar la apariencia visual.
+</p>
+</div>
+
+<div class="card">
+<h3>Repositorio Github</h3>
+<p>
+El código fuente completo se encuentra disponible en Github.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="reporte">
+
+<div class="section-title">
+<h2>Reporte de Modificaciones</h2>
+<p>Mejoras realizadas durante el desarrollo</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Mejoras Visuales</h3>
+<p>
+Se actualizaron colores y tipografía para un diseño más elegante.
+</p>
+</div>
+
+<div class="card">
+<h3>Menú Interactivo</h3>
+<p>
+Se implementó navegación dinámica mediante botones visuales.
+</p>
+</div>
+
+<div class="card">
+<h3>Optimización</h3>
+<p>
+Se organizó y optimizó el código fuente del proyecto.
+</p>
+</div>
+
+<div class="card">
+<h3>Diseño Responsivo</h3>
+<p>
+La página se adapta correctamente a diferentes dispositivos.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="galeria">
+
+<div class="section-title">
+<h2>Galería</h2>
+<p>Vista previa del sistema web</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1973&auto=format&fit=crop">
+
+</div>
+
+</section>
 
 <footer>
 
-<p>
-Luxury Fashion © 2026
-</p>
-
-<p>
-Proyecto web desarrollado con HTML, CSS y JavaScript
-</p>
+<p>Producto Integrador Final</p>
+<p>Licenciatura en Desarrollo de Sistemas Web</p>
+<p>Metodología SCRUM</p>
 
 </footer>
-
-<script>
-
-/* VARIABLES */
-
-let contador = 0;
-let total = 0;
-
-/* PRODUCTOS */
-
-let productos = [
-
-{nombre:"Playera Negra", precio:150},
-
-{nombre:"Sudadera", precio:350},
-
-{nombre:"Jeans", precio:500}
-
-];
-
-/* BOTONES */
-
-document.querySelectorAll(".btn").forEach((boton,index)=>{
-
-boton.addEventListener("click",function(){
-
-contador++;
-
-total += productos[index].precio;
-
-/* CONTADOR */
-
-document.getElementById("contador").innerText =
-"Productos agregados: " + contador;
-
-/* ADMIN */
-
-document.getElementById("totalAdmin").innerText =
-contador;
-
-/* LISTA */
-
-let li = document.createElement("li");
-
-li.textContent =
-productos[index].nombre +
-" - $" +
-productos[index].precio;
-
-document.getElementById("lista").appendChild(li);
-
-/* TOTAL */
-
-document.getElementById("total").innerText =
-"Total: $" + total;
-
-});
-
-});
-
-/* COMPRAR */
-
-function comprar(){
-
-alert("Gracias por tu compra 🛍️");
-
-}
-
-/* BUSCADOR */
-
-function buscar(){
-
-let input =
-document.getElementById("buscador").value.toLowerCase();
-
-let productos =
-document.getElementsByClassName("card");
-
-let encontrado = false;
-
-for(let i=0;i<productos.length;i++){
-
-let texto =
-productos[i].innerText.toLowerCase();
-
-if(texto.includes(input)){
-
-productos[i].style.display = "block";
-
-encontrado = true;
-
-}else{
-
-productos[i].style.display = "none";
-
-}
-
-}
-
-document.getElementById("mensaje").innerText =
-encontrado ? "" : "No se encontraron productos";
-
-}
-
-</script>
 
 </body>
 </html>
